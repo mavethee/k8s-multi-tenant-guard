@@ -1,0 +1,32 @@
+# IDE - Visual Studio Code
+.vscode/
+*.code-workspace
+
+# IDE - IntelliJ/JetBrains
+.idea/
+*.iws
+*.iml
+*.ipr
+
+# System files
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Logs and temporary files
+*.log
+tmp/
+temp/
+
+# Kubernetes / Secrets (na wszelki wypadek)
+.kube/
+config
+*.key
+*.pem
+*.cert
+.env
+
+# Terraform / Provider artifacts (jeśli używasz)
+.terraform/
+*.tfstate
+*.tfstate.backup

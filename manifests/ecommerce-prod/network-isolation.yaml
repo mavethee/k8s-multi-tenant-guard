@@ -1,0 +1,11 @@
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: deny-other-namespaces
+spec:
+  podSelector: {} # Dotyczy wszystkich podów w tym namespace
+  policyTypes:
+  - Ingress
+  ingress:
+  - from:
+    - podSelector: {} # Pozwól na ruch tylko wewnątrz tego samego namespace

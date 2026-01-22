@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: shop-api
+  namespace: ecommerce-prod
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: shop
+  template:
+    metadata:
+      labels:
+        app: shop
+    spec:
+      priorityClassName: critical-apps
+      nodeSelector:
+        hardware: high-performance
+      containers:
+      - name: shop-container
+        image: nginx
+        resources:
+          limits:
+            cpu: 500m
+            memory: 512Mi
